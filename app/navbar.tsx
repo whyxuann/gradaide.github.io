@@ -156,17 +156,17 @@ export default function NavBar() {
               <div className="modal-backdrop"></div>
             )}
             <Modal show={show} onHide={handleClose} dialogClassName="custom-modal">
-              <div className="modal-header">
+              <div className="modal-header"  style={{paddingLeft:"20px"}}>
                 <h1 className='modalfont'>回報問題</h1>
                 <button className="close-button" onClick={handleClose}>
                   &times;
                 </button>
               </div>
-              <div className="modal-content">
+              <div className="modal-content"  style={{paddingLeft:"20px"}}>
                 <p>我們將會回覆至您的電子郵件</p>
                 <textarea placeholder="請輸入您的問題..." className="modal-text" />
               </div>
-              <div className="modal-footer">
+              <div className="modal-footer"  style={{paddingLeft:"20px"}}>
                 <button className="confirm-button" onClick={handleClose}>
                   確定
                 </button>

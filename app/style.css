@@ -789,7 +789,6 @@ nav{
 
 /* Modal 容器 */
 .custom-modal {
-  padding-left: 20px;
   position: fixed; /* 保持在視窗中央 */
   top: 35%;
   left: 50%;
