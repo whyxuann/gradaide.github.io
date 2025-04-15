@@ -992,13 +992,14 @@ body {
     margin-top: 5px;
   }
 }
-@media screen and (min-aspect-ratio: 1/1) { /* 當寬度大於高度時 */
+/* style.css */
+@media screen and (min-aspect-ratio: 1/1) {
   .form-structor::after {
-    background-image: url('../../public/img/loginbg.png');
+    background-image: url('/img/loginbg.png'); /* 注意：路徑要從 public 開始 */
   }
 }
-@media screen and (max-aspect-ratio: 1/1) { /* 當高度大於寬度時 */
+@media screen and (max-aspect-ratio: 1/1) {
   .form-structor::after {
-    background-image: url('../../public/img/loginph.png');
+    background-image: url('/img/loginph.png');
   }
 }

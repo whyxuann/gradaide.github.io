@@ -31,6 +31,7 @@ export default function Index() {
   const togglePasswordVisibility5 = () => {
     setPasswordShown5(!passwordShown5);
   };
+  
   return (
     <div className="form-structor">
       {/* Log In Section */}

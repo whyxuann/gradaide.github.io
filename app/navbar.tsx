@@ -139,47 +139,7 @@ export default function NavBar() {
                 常見問題
               </li>
             </button>
-            {/* <li className="dropdown lil">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src="/img/history.png" className="nav-icon" alt="對話歷史紀錄" />
-                對話歷史紀錄
-                <button className="arrow" style={{ marginLeft: '3em' }} onClick={toggleDropdownHis}>
-                  <img src={isDropdownHisOpen ? "/img/up.png" : "/img/down.png"} alt="Toggle" className="icon-image" />
-                </button>
-              </div>
-              {isDropdownHisOpen && (
-                <ul className="dropdown-menu show">
-                  {titles.map((title, index) => (
-                    <li key={index} className="editfont">
-                      {editingIndex === index ? (
-                        <input
-                          type="text"
-                          value={editingContent}
-                          onChange={(e) => setEditingContent(e.target.value)}
-                          onBlur={handleSave}
-                          onKeyDown={handleKeyDown}
-                          ref={inputRef}
-                          className="edit-input"
-                          style={{ width: '70%', padding: '5px' }}
-                        />
-                      ) : (
-                        <button onClick={() => router.push('/history')} className='button1'>
-                          <span className="dropdown-menu show" style={{ maxWidth: '68%', overflow: 'auto' }}>{title}</span>
-                        </button>
-                      )}
-                      <div className="button-group">
-                        <button className="edit-button arrow" onClick={() => handleEditClick(index)}>
-                          <img src="/img/write.png" className="edit-icon" alt="編輯" />
-                        </button>
-                        <button className="delete-button arrow" onClick={() => handleDelete(index)}>
-                          <img src="/img/delete.png" className="edit-icon" alt="刪除" />
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li> */}
+            
             <button onClick={() => router.push('/direction')} className='button'>
               <li className="lil">
                 <img src="/img/use.png" className="nav-icon" alt="使用說明" />
