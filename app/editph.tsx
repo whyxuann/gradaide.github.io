@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
@@ -6,7 +7,7 @@ import './name/name.css';
 import './login/login.css';
 import './password/password.css';
 import './forget/forget.css';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal} from 'react-bootstrap';
 
 export default function Topph() {
     const router = useRouter();
