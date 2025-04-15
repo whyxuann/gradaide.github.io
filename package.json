@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://whyxuann.github.io/gradaide.github.io",
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build && next export",
+    "dev": "next dev",
+  "build": "next build",  
+  "start": "next start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },
