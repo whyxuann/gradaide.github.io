@@ -22,7 +22,12 @@ export default function SendBox() {
   const toggleTimeslot = (day: string, time: string) => {
     const key = `${day}-${time}`;
     const newSelection = new Set(selectedTimes);
-    newSelection.has(key) ? newSelection.delete(key) : newSelection.add(key);
+    if (newSelection.has(key)) {
+        newSelection.delete(key);
+      } else {
+        newSelection.add(key);
+      }
+      
     setSelectedTimes(newSelection);
   };
 

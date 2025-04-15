@@ -11,21 +11,11 @@ import { Modal} from 'react-bootstrap';
 
 export default function NavBar() {
   const [isDropdownMemOpen, setIsDropdownMemOpen] = useState(false);
-  const [isDropdownHisOpen, setIsDropdownHisOpen] = useState(false);
   const [isDropdownSetOpen, setIsDropdownSetOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [setOpenEditDropdowns] = useState<{ [key: number]: boolean }>({});
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // State for titles and editing functionality
-  const [titles, setTitles] = useState([
-    '畢業學分問題',
-    '113年度行事曆',
-    '資管系的選修課',
-    '教授的電子郵件',
-    '課程代碼查詢',
-  ]);
- 
+
 
   // Toggle collapse
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
@@ -41,7 +31,6 @@ export default function NavBar() {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownMemOpen(false);
-        setIsDropdownHisOpen(false);
         setIsDropdownSetOpen(false);
       }
     };

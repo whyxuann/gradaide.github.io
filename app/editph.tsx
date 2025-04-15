@@ -30,7 +30,6 @@ export default function Topph() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
     const [isDropdownMemOpen, setIsDropdownMemOpen] = useState(false);
-    const [setIsDropdownHisOpen] = useState(false);
     const [isDropdownSetOpen, setIsDropdownSetOpen] = useState(false);
     const [isCollapsed] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
