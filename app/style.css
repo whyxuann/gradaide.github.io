@@ -1027,23 +1027,20 @@ nav{
     visibility: visible;
 }
 .navbar {
-  position: fixed;
-  padding: 25px;
-  padding-right: 10px;
+  position: fixed;       /* 固定在螢幕左側 */
   top: 0;
   left: 0;
-  width: 75%; /* 調整展開的大小 */
-  height: 100vh; /* 讓它佔滿整個高度 */
-  background-color: var(--navbackground);
-  color: var(--color);
-  z-index: 1000; /* 確保不被其他元素擋住 */
-  transform: translateX(-100%); /* 預設隱藏在左側 */
-  transition: transform 0.8s ease-in-out;
+  width: 100vw;          /* 滿版寬度 */
+  height: 100vh;         /* 滿版高度 */
+  background-color: #fdfdf9;  /* 或你原本的顏色 */
+  z-index: 9999;         /* 保證覆蓋住其他內容 */
+  overflow-y: auto;      /* 如果超出高度可以滾動 */
 }
 
 /* 當導覽列展開時，讓它滑出 */
 .navbar.open {
   transform: translateX(0);
+  transition: transform 0.3s ease;
 }
   .out-icon {
    margin-bottom: 25px;
