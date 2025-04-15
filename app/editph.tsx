@@ -30,47 +30,28 @@ export default function Topph() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
     const [isDropdownMemOpen, setIsDropdownMemOpen] = useState(false);
-    const [isDropdownHisOpen, setIsDropdownHisOpen] = useState(false);
+    const [setIsDropdownHisOpen] = useState(false);
     const [isDropdownSetOpen, setIsDropdownSetOpen] = useState(false);
-    const [isCollapsed, setIsCollapsed] = useState(false);
-    const [openEditDropdowns, setOpenEditDropdowns] = useState<{ [key: number]: boolean }>({});
+    const [isCollapsed] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     // State for titles and editing functionality
-    const [titles, setTitles] = useState([
-        '畢業學分問題',
-        '113年度行事曆',
-        '資管系的選修課',
-        '教授的電子郵件',
-        '課程代碼查詢',
-    ]);
-    const [editingIndex, setEditingIndex] = useState<number | null>(null);
-    const [editingContent, setEditingContent] = useState<string>('');
-    const inputRef = useRef<HTMLInputElement>(null);
+    
 
     // Toggle collapse
-    const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
     // Toggle dropdown menus
     const toggleDropdownMem = () => setIsDropdownMemOpen(!isDropdownMemOpen);
-    const toggleDropdownHis = () => setIsDropdownHisOpen(!isDropdownHisOpen);
     const toggleDropdownSet = () => setIsDropdownSetOpen(!isDropdownSetOpen);
 
-    const toggleDropdownEdit = (index: number) => {
-        setOpenEditDropdowns((prev) => ({
-            ...prev,
-            [index]: !prev[index],
-        }));
-    };
+    
 
     // Close dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 setIsDropdownMemOpen(false);
-                setIsDropdownHisOpen(false);
                 setIsDropdownSetOpen(false);
-                setOpenEditDropdowns({});
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -78,31 +59,9 @@ export default function Topph() {
     }, []);
 
     // Handle editing title
-    const handleEditClick = (index: number) => {
-        setEditingIndex(index);
-        setEditingContent(titles[index]);
-        setTimeout(() => inputRef.current?.focus(), 0); // Auto-focus the input
-    };
+   
 
-    const handleSave = () => {
-        if (editingIndex !== null) {
-            const updatedTitles = [...titles];
-            updatedTitles[editingIndex] = editingContent;
-            setTitles(updatedTitles);
-            setEditingIndex(null); // Exit editing mode
-        }
-    };
-
-    const handleDelete = (index: number) => {
-        const updatedTitles = titles.filter((_, i) => i !== index);
-        setTitles(updatedTitles);
-    };
-
-    const handleKeyDown = (event: React.KeyboardEvent) => {
-        if (event.key === 'Enter') {
-            handleSave();
-        }
-    };
+    
 
 
     const [show, setShow] = useState(false);
